@@ -1,0 +1,231 @@
+@import '../../local_modules/normalize.css/normalize';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+
+  line-height: normal;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    @include outline;
+  }
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+select {
+  appearance: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-within {
+    border-color: $color-primary-gamma;
+  }
+}
+
+textarea {
+  font: inherit;
+
+  border: none;
+  resize: none;
+  outline: 0;
+
+  &:focus {
+    border-color: $color-primary-alpha;
+  }
+}
+
+input {
+  font: inherit;
+
+  color: $color-primary-alpha;
+
+  border: none;
+  background: none;
+  outline: 0;
+
+  &:focus {
+    border-color: $color-primary-gamma;
+  }
+}
+
+input[type='button'] {
+  padding: 0;
+
+  cursor: pointer;
+}
+
+input::placeholder {
+  opacity: 1;
+  color: $color-primary-psi;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+button {
+  display: inline-block;
+
+  font: inherit;
+
+  padding: 0;
+  margin: 0;
+
+  user-select: none;
+
+  cursor: pointer;
+
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    @include outline;
+  }
+}
+
+details summary {
+  cursor: pointer;
+
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    @include outline;
+  }
+}
+
+details > summary {
+  list-style: none;
+  display: block;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 62.5%;
+
+  @include media-desktop {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.6rem;
+
+  margin: 0;
+
+  color: $color-primary-alpha;
+  background-color: $color-primary-psi;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+
+  z-index: 9;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  background: rgba(0, 0, 0, 0.5);
+
+  pointer-events: none;
+
+  cursor: pointer;
+
+  &.active {
+    opacity: 1;
+
+    pointer-events: all;
+  }
+}
+
+.scroll-hidden {
+  overflow: hidden;
+}
