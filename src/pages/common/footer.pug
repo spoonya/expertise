@@ -1,1 +1,13 @@
 footer.footer
+  .container
+    .info
+      +icon('info__logo', 'logo')
+      .info__group
+        .info__group-inner
+          a.info__link.info__link--small(href="https://yandex.by/maps/-/CCUqnMxqCB" rel="noopener" target="_blank")
+            +icon('info__icon', 'location')
+            |Москва, Волгоградский проспект., д. 45А
+          a.info__link(href="mailto:info@souzprofexpert.ru")
+            +icon('info__icon', 'message')
+            |info@souzprofexpert.ru
+        a.info__phone(href="tel:+74993468283") +7 (499) 346-82-83

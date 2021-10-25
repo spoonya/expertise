@@ -1,0 +1,152 @@
+.quiz {
+  margin-bottom: 8rem;
+}
+
+.quiz__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  border: 1px solid $color-primary-psi;
+  border-radius: $border-r-xxl;
+}
+
+.quiz__descrip {
+  max-width: 46rem;
+  width: 100%;
+
+  &-decorator {
+    padding: 5px 14px;
+    margin-bottom: 3.1rem;
+
+    width: fit-content;
+
+    border: 1px solid $color-primary-alpha;
+    border-radius: $border-r-lg;
+
+    font-size: 3rem;
+    color: $color-primary-alpha;
+    text-align: center;
+  }
+
+  &-txt {
+    font-size: 2rem;
+  }
+
+  &-inner {
+    padding-left: 4rem;
+
+    margin-bottom: 6rem;
+  }
+
+  &-img {
+    min-width: 61.5rem;
+    width: 100%;
+    object-fit: cover;
+
+    border-bottom-left-radius: $border-r-xl;
+  }
+}
+
+.quiz__title {
+  font-size: 3.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.quiz__content {
+  max-width: 67rem;
+  min-height: 70rem;
+  width: 100%;
+  height: 100%;
+
+  padding: 4.3rem 7rem 4rem;
+
+  border-radius: $border-r-xxl;
+  background-color: $color-primary-psi;
+}
+
+.quiz__counter {
+  margin-bottom: 4rem;
+  color: $color-tertiary-beta;
+  text-align: center;
+}
+
+.quiz__progressbar {
+  margin-bottom: 5.1rem;
+}
+
+.quiz__item-title {
+  font-size: 2.4rem;
+  font-weight: 500;
+
+  margin-bottom: 6rem;
+}
+
+.quiz__inputs {
+  margin-bottom: 7.7rem;
+
+  .form__checkbox-styled {
+    background-color: $color-primary-beta;
+
+    margin-right: 2rem;
+
+    min-width: 30px;
+    min-height: 30px;
+
+    box-shadow: inset 0px 1px 1px rgba(22, 11, 86, 0.1);
+    border-radius: $border-r-lg;
+
+    &::before {
+      content: url('data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%20clip-path%3D%22url(%23clip0_33%3A260)%22%3E%0A%3Cpath%20d%3D%22M0%206.38288L4.10933%2010.5L12%202.61717L10.8672%201.5L4.10933%208.24999L1.11715%205.25784L0%206.38288Z%22%20fill%3D%22%23160B56%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3CclipPath%20id%3D%22clip0_33%3A260%22%3E%0A%3Crect%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22white%22%2F%3E%0A%3C%2FclipPath%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E%0A');
+
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .form__checkbox-txt {
+    font-size: 1.8rem;
+    color: $color-primary-gamma;
+    white-space: unset;
+  }
+}
+
+.quiz__button-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2.1rem 3rem;
+
+  width: fit-content;
+
+  &:hover {
+    .quiz__button-next-icon {
+      transform: translateX(-20px);
+    }
+  }
+
+  &-icon {
+    height: 16px;
+    width: 16px;
+
+    margin-left: 3.5rem;
+
+    fill: $color-primary-beta;
+
+    transition: transform 0.15s linear;
+  }
+}
+
+.quiz__button-prev {
+  display: none;
+
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: rgba(22, 11, 86, 0.75);
+  text-transform: uppercase;
+
+  border-bottom: 1px dashed;
+}

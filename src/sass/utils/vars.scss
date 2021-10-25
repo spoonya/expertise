@@ -11,5 +11,22 @@ $color-primary-beta: #fff;
 $color-primary-gamma: #1d1c26;
 $color-primary-psi: #f1f1f5;
 $color-primary-omega: #46469c;
+
+$color-secondary-alpha: #313132;
+$color-secondary-beta: #dbdae5;
+$color-secondary-gamma: #e8e8e9;
+$color-secondary-psi: #908f95;
+$color-secondary-omega: #616067;
+
+$color-tertiary-alpha: #a61f1f;
+$color-tertiary-beta: #727179;
+
+$color-form-success: $color-primary-omega;
+$color-form-error: $color-tertiary-alpha;
 // Fonts
 $font-primary: 'TTNorms', sans-serif;
+//Border
+$border-r-sm: 3px;
+$border-r-lg: 5px;
+$border-r-xl: 10px;
+$border-r-xxl: 20px;

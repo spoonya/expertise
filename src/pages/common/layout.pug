@@ -3,16 +3,22 @@ html(lang="ru")
   block head
     head
       meta(charset="utf-8")
-      meta(name="description" content="")
+      meta(name="description" content="Экспертиза проектной документации в Москве")
       meta(content="width=device-width, initial-scale=1" name="viewport")
       meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+      link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+      script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
+
       link(rel="stylesheet" href="css/style.min.css")
+
       block title
         title СоюзПрофЭксперт
   body
     include ../includes/common/mixins
+    include header
     block header
-      include header
+      +header
     .page
       block content
       block footer

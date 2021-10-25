@@ -1,0 +1,43 @@
+.header {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  &--static {
+    position: static;
+
+    border-bottom: 1px solid $color-primary-psi;
+  }
+}
+
+.header__rules {
+  display: flex;
+  align-items: center;
+
+  max-width: 15.8rem;
+
+  &:hover {
+    span {
+      color: $color-tertiary-alpha;
+      border-color: transparent;
+    }
+  }
+
+  &-txt {
+    color: $color-primary-alpha;
+    font-size: 1.4rem;
+
+    span {
+      display: block;
+
+      width: fit-content;
+
+      border-bottom: 1px dashed $color-primary-alpha;
+
+      transition: color 0.1s linear, border-color 0.1s linear;
+    }
+  }
+}

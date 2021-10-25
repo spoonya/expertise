@@ -86,14 +86,14 @@ textarea {
 input {
   font: inherit;
 
-  color: $color-primary-alpha;
+  color: inherit;
 
   border: none;
   background: none;
   outline: 0;
 
   &:focus {
-    border-color: $color-primary-gamma;
+    border-color: $color-primary-alpha;
   }
 }
 
@@ -105,11 +105,8 @@ input[type='button'] {
 
 input::placeholder {
   opacity: 1;
-  color: $color-primary-psi;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: $color-secondary-psi;
   font-size: 14px;
-  font-weight: 500;
 }
 
 button {
@@ -167,7 +164,7 @@ html {
 
   font-size: 62.5%;
 
-  @include media-desktop {
+  @include media-laptop {
     font-size: 55%;
   }
 }
@@ -178,8 +175,8 @@ body {
 
   margin: 0;
 
-  color: $color-primary-alpha;
-  background-color: $color-primary-psi;
+  color: $color-primary-gamma;
+  background-color: $color-primary-beta;
 }
 
 .container {

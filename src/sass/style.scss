@@ -3,7 +3,18 @@
 
 @import 'mixins/media';
 @import 'mixins/outline';
+@import 'mixins/loading';
 
 @import 'common/global';
 @import 'common/header';
+@import 'common/form';
+@import 'common/button';
+@import 'common/info';
+@import 'common/title';
+@import 'common/swiper';
 @import 'common/footer';
+
+@import 'index/intro';
+@import 'index/about';
+@import 'index/work';
+@import 'index/quiz';
