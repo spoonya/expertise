@@ -2,6 +2,8 @@
   &::after {
     position: absolute;
 
+    z-index: 5;
+
     content: '';
 
     cursor: not-allowed;

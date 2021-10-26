@@ -201,17 +201,19 @@ class FormValidation {
   }
 
   _checkAgreements(checkboxes, config) {
-    checkboxes.forEach((checkbox) => {
-      if (!checkbox.checked && config.isRequired) {
-        this._setError(checkbox, config.errors.unchecked);
+    let isValid = true;
 
-        return false;
+    for (let i = 0; i < checkboxes.length; i++) {
+      if (!checkboxes[i].checked && config.isRequired) {
+        this._setError(checkboxes[i], config.errors.unchecked);
+
+        isValid = false;
+      } else {
+        this._setSuccess(checkboxes[i]);
       }
+    }
 
-      this._setSuccess(checkbox);
-
-      return true;
-    });
+    return isValid;
   }
 
   _showAlert(isSuccess = true) {
