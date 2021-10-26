@@ -1,0 +1,14 @@
+extends common/layout
+
+block header
+  +header('header--static')
+
+block footer
+  +footer(false)
+
+block content
+  main
+    .alert.container
+      +icon('alert__icon', 'check-large')
+      p.alert__txt Мы получили Ваш запрос и свяжемся с Вами в течение 15 минут
+      a.alert__link(href="index.html") Вернуться на главную страницу

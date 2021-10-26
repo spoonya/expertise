@@ -10,8 +10,6 @@ html(lang="ru")
       link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
       script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
 
-      //- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.css")
-
       link(rel="stylesheet" href="css/style.min.css")
 
       block title
@@ -19,11 +17,11 @@ html(lang="ru")
   body
     include ../includes/common/mixins
     include header
+    include footer
     block header
       +header
-    .page
-      block content
-      block footer
-        include footer
+    block content
+    block footer
+      +footer
     block scripts
       script(src='scripts/main.min.js')

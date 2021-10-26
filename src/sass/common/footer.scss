@@ -1,3 +1,26 @@
 .footer {
   border-top: 1px solid $color-primary-psi;
 }
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 0;
+
+  &-item {
+    font-size: 14px;
+    color: $color-tertiary-omega;
+
+    transition: color 0.1s linear;
+
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
+
+    &:hover {
+      color: $color-primary-alpha;
+    }
+  }
+}

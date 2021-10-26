@@ -218,13 +218,12 @@ class FormValidation {
 
   _showAlert(isSuccess = true) {
     const links = {
-      catalog: 'success-catalog.html',
-      callback: 'success-callback.html'
+      success: 'alert-success.html'
     };
 
     const url = this.isCatalog
-      ? `${window.location.protocol}//${document.domain}/${links.catalog}`
-      : `${window.location.protocol}//${document.domain}/${links.callback}`;
+      ? `${window.location.protocol}//${document.domain}/${links.success}`
+      : null;
 
     if (isSuccess) {
       document.location.href = url;

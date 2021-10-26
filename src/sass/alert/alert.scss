@@ -1,0 +1,38 @@
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 11.7rem 0 23.6rem;
+
+  &__txt {
+    text-align: center;
+    font-weight: 500;
+    font-size: 5.2rem;
+
+    max-width: 66rem;
+
+    margin-bottom: 5.6rem;
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+
+    margin-bottom: 27px;
+  }
+
+  &__link {
+    color: $color-primary-alpha;
+    font-size: 18px;
+    border-bottom: 1px dashed;
+
+    transition: color 0.1s linear, border-color 0.1s linear;
+
+    &:hover {
+      color: $color-primary-omega;
+      border-color: $color-primary-omega;
+    }
+  }
+}

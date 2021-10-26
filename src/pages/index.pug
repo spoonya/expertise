@@ -3,265 +3,210 @@ extends common/layout
 include includes/index/mixins
 
 block content
-  main
-    section.intro(style="background-image: url('images/intro/bg.png');")
-      .container
-        .intro__inner
-          .intro__content
-            h1.intro__title.title Негосударственая экспертиза проектной документации
-            ul.intro__list
-              li.intro__list-item
-                +icon('intro__list-item-icon', 'check')
-                p
-                  span В разы&nbsp;
-                  |быстрее государственной экспертизы
-              li.intro__list-item
-                +icon('intro__list-item-icon', 'check')
-                p
-                  span В разы&nbsp;
-                  |дешевле государственной экспертизы
-              li.intro__list-item
-                +icon('intro__list-item-icon', 'check')
-                p
-                  span В разы&nbsp;
-                  |меньше отрицательных заключений
-            .intro__gains
-              p.intro__gains-txt При этом:
-              ul.intro__gains-list
-                li.intro__gains-item
-                  +icon('intro__gains-item-icon', 'legal')
-                  p Заключение имеет такую же юридическую силу как у государственной экспертизы
-                li.intro__gains-item
-                  +icon('intro__gains-item-icon', 'contract')
-                  p Регистрируется в ЕГРЗ
-                li.intro__gains-item
-                  +icon('intro__gains-item-icon', 'document')
-                  p Позволяет получить разрешение на строительство
-          .intro__form
-            h2.intro__form-title Закажите звонок
-            p.intro__form-txt Оставьте свои данные, <br> и наш специалист позвонит Вам <br> и ответит на ваши вопросы
-            form#form-callback.form(name="обратный звонок" action="#")
-              label.form__control
-                span.form__label-txt Как Вас зовут?
-                input.form__input(name="callback-name" type="text" placeholder="Александр Гельевич" data-form-name)
-                span.form__error
-              label.form__control
-                span.form__label-txt Номер телефона
-                input.form__input(name="callback-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
-                span.form__error
-              button.button(type="submit") Заказать звонок
-              .form__control
-                label.form__checkbox-wrapper
-                  input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
-                  span.form__checkbox-styled.form__checkbox-styled--dark
-                  span.form__checkbox-txt Согласен на обработку персональных данных
+  .page
+    main
+      section.intro(style="background-image: url('images/intro/bg.png');")
+        .container
+          .intro__inner
+            .intro__content
+              h1.intro__title.title Негосударственая экспертиза проектной документации
+              ul.intro__list
+                li.intro__list-item
+                  +icon('intro__list-item-icon', 'check')
+                  p
+                    span В разы&nbsp;
+                    |быстрее государственной экспертизы
+                li.intro__list-item
+                  +icon('intro__list-item-icon', 'check')
+                  p
+                    span В разы&nbsp;
+                    |дешевле государственной экспертизы
+                li.intro__list-item
+                  +icon('intro__list-item-icon', 'check')
+                  p
+                    span В разы&nbsp;
+                    |меньше отрицательных заключений
+              .intro__gains
+                p.intro__gains-txt При этом:
+                ul.intro__gains-list
+                  li.intro__gains-item
+                    +icon('intro__gains-item-icon', 'legal')
+                    p Заключение имеет такую же юридическую силу как у государственной экспертизы
+                  li.intro__gains-item
+                    +icon('intro__gains-item-icon', 'contract')
+                    p Регистрируется в ЕГРЗ
+                  li.intro__gains-item
+                    +icon('intro__gains-item-icon', 'document')
+                    p Позволяет получить разрешение на строительство
+            .intro__form
+              h2.intro__form-title Закажите звонок
+              p.intro__form-txt Оставьте свои данные, <br> и наш специалист позвонит Вам <br> и ответит на ваши вопросы
+              form#form-callback.form(name="обратный звонок" action="#")
+                label.form__control
+                  span.form__label-txt Как Вас зовут?
+                  input.form__input(name="callback-name" type="text" placeholder="Александр Гельевич" data-form-name)
                   span.form__error
+                label.form__control
+                  span.form__label-txt Номер телефона
+                  input.form__input(name="callback-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
+                  span.form__error
+                button.button(type="submit") Заказать звонок
+                .form__control
+                  label.form__checkbox-wrapper
+                    input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                    span.form__checkbox-styled.form__checkbox-styled--dark
+                    span.form__checkbox-txt Согласен на обработку персональных данных
+                    span.form__error
 
-    section.about
-      .container
-        .about__inner
-          .about__content
-            h2.about__title.title Почему обращаются к нам?
-            h3.about__subtitle Проводим экспертизу одновременно с разработкой проекта, принимая в работу законченные раздел
-            p.about__txt
-              |Это позволяет нам сократить сроки выдачи заключения до&nbsp;
-              span 7 дней
-              |, включая регистрацию в ЕГРЗ.
-            p.about__permission И Вы быстрее получаете разрешение на строительство.
-            .about__gains
-              p.about__gains-txt Кроме того:
-              ul.about__list
-                li.about__list-item
-                  .about__list-item-icon
-                    +icon('', 'clock')
-                  p Если у вас есть готовый проект, мы проведем экспертизу <br> в срок от 20 дней
-                li.about__list-item
-                  .about__list-item-icon
-                    +icon('', 'chat')
-                  p Обеспечим прямое общение <br> с нашими экспертами для оперативного устранения замечаний
-          img.about__img(src="images/about/about-1.png", alt="", width="470", height="650", loading="lazy")
+      section.about
+        .container
+          .about__inner
+            .about__content
+              h2.about__title.title Почему обращаются к нам?
+              h3.about__subtitle Проводим экспертизу одновременно с разработкой проекта, принимая в работу законченные раздел
+              p.about__txt
+                |Это позволяет нам сократить сроки выдачи заключения до&nbsp;
+                span 7 дней
+                |, включая регистрацию в ЕГРЗ.
+              p.about__permission И Вы быстрее получаете разрешение на строительство.
+              .about__gains
+                p.about__gains-txt Кроме того:
+                ul.about__list
+                  li.about__list-item
+                    .about__list-item-icon
+                      +icon('', 'clock')
+                    p Если у вас есть готовый проект, мы проведем экспертизу <br> в срок от 20 дней
+                  li.about__list-item
+                    .about__list-item-icon
+                      +icon('', 'chat')
+                    p Обеспечим прямое общение <br> с нашими экспертами для оперативного устранения замечаний
+            img.about__img(src="images/about/about-1.png", alt="", width="470", height="650", loading="lazy")
 
-    section.work
-      .container
-        .work__inner
-          img.work__img(src="images/work/work-1.png", alt="", width="600", height="848", loading="lazy")
-          .work__content
-            h2.work__title.title Как мы работаем?
-            ul.work__list
-              li.work__item
-                .work__item-num
-                  span 1
-                p.work__item-txt Вы звоните нам и сообщаете нашему специалисту необходимую информацию для оценки вашего проекта
-              li.work__item
-                .work__item-num
-                  span 2
-                p.work__item-txt Мы рассчитываем стоимость и согласовываем с Вами условия работы
-              li.work__item
-                .work__item-num
-                  span 3
-                p.work__item-txt Вы отправляете (поэтапно или единовременно) проектную документация на экспертизу
-              li.work__item
-                .work__item-num
-                  span 4
-                p.work__item-txt.work__item-txt--bold Наши эксперты проверяют проект на соответствие строительным стандартам и техническим условиям
-              li.work__item
-                .work__item-num
-                  span 5
-                p.work__item-txt Вы устраняете замечения в проектной документации (если они были)
-              li.work__item
-                .work__item-num
-                  span 6
-                p.work__item-txt Мы выдаем ПОЛОЖИТЕЛЬНОЕ заключение экспертизы и регистрируем его в ЕГРЗ
-              li.work__item
-                .work__item-num
-                  span 7
-                p.work__item-txt Вы получаете разрешение на строительство Вашего объекта
+      section.work
+        .container
+          .work__inner
+            img.work__img(src="images/work/work-1.png", alt="", width="600", height="848", loading="lazy")
+            .work__content
+              h2.work__title.title Как мы работаем?
+              ul.work__list
+                li.work__item
+                  .work__item-num
+                    span 1
+                  p.work__item-txt Вы звоните нам и сообщаете нашему специалисту необходимую информацию для оценки вашего проекта
+                li.work__item
+                  .work__item-num
+                    span 2
+                  p.work__item-txt Мы рассчитываем стоимость и согласовываем с Вами условия работы
+                li.work__item
+                  .work__item-num
+                    span 3
+                  p.work__item-txt Вы отправляете (поэтапно или единовременно) проектную документация на экспертизу
+                li.work__item
+                  .work__item-num
+                    span 4
+                  p.work__item-txt.work__item-txt--bold Наши эксперты проверяют проект на соответствие строительным стандартам и техническим условиям
+                li.work__item
+                  .work__item-num
+                    span 5
+                  p.work__item-txt Вы устраняете замечения в проектной документации (если они были)
+                li.work__item
+                  .work__item-num
+                    span 6
+                  p.work__item-txt Мы выдаем ПОЛОЖИТЕЛЬНОЕ заключение экспертизы и регистрируем его в ЕГРЗ
+                li.work__item
+                  .work__item-num
+                    span 7
+                  p.work__item-txt Вы получаете разрешение на строительство Вашего объекта
 
-    section.quiz
-      .container
-        .quiz__inner
-          .quiz__descrip
-            .quiz__descrip-inner
-              h2.quiz__title.title Рассчитайте стоимость экспертизы онлайн
-              p.quiz__descrip-decorator ответив на 5 вопросов
-              p.quiz__descrip-txt Вы получите коммерческое предложение <br> с точными стоимостью и сроками проведения негосударственной экспертизы проектной документации
-            img.quiz__descrip-img(src="images/quiz/quiz-1.png", alt="", width="615", height="291", loading="lazy")
-          #quiz.quiz__content
-            .quiz__counter(data-quiz-counter)
-              |Вопрос&nbsp;
-              span(data-quiz-counter-current)
-              |&nbsp;из&nbsp;
-              span(data-quiz-counter-total)
-            .quiz__progressbar(data-quiz-progress)
-            form#form-quiz.form.quiz__form(name="Расчёты" action="#")
-              .swiper-container
-                .swiper-wrapper
-                  .quiz__item.swiper-slide
-                    h3.quiz__item-title Выберите тип экспертизы
-                    .quiz__inputs
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="тип экспертизы" value="первичная" type="checkbox" checked hidden)
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Первичная
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="тип экспертизы" value="вторичная" type="checkbox" hidden)
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Вторичная
-                  .quiz__item.swiper-slide
-                    h3.quiz__item-title Выберите тип объекта
-                    .quiz__inputs
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="тип объекта" value="жилой" type="radio" checked hidden)
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Жилой
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="тип объекта" value="нежилой" type="radio" hidden)
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Нежилой
-                  .quiz__item.swiper-slide
-                    h3.quiz__item-title Укажите объем экспертизы
-                    .quiz__inputs
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="объём экспертизы" value="проектная документация" type="radio" checked hidden data-quiz-branch="project-doc")
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Проектная документация
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="объём экспертизы" value="проектная документация и инженерные изыскания" type="radio" hidden data-quiz-branch="project-doc")
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Проектная документация и инженерные изыскания
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="объём экспертизы" value="проектная документация со сметами" type="radio" hidden data-quiz-branch="project-doc-estimate")
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Проектная документация со сметами
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="объём экспертизы" value="инженерные изыскания" type="radio" hidden data-quiz-branch="engineering-survey")
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Инженерные изыскания
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="объём экспертизы" value="сметная документация" type="radio" hidden data-quiz-branch="estimate")
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Сметная документация
-                  .quiz__item.swiper-slide
-                    h3.quiz__item-title Назначение документации
-                    .quiz__inputs
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="назначение документации" value="для строительства или реконструкции объекта капитального строительства" type="radio" checked hidden)
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Для строительства или реконструкции объекта капитального строительства
-                      .form__control
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="назначение документации" value="для капитального ремонта объекта капитального строительства" type="radio" hidden)
-                          span.form__checkbox-styled
-                          span.form__checkbox-txt Для капитального ремонта объекта капитального строительства
-                  #project-doc.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Укажите исходные параметры
-                    .quiz__inputs.quiz__inputs--md
-                      label.form__control.form__control--slider
-                        p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
-                        .form__input-wrapper
-                          input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
-                          span.form__input-unit кв.м
-                        .quiz__slider(data-quiz-slider="square")
-                        span.quiz__slider-value-lower(data-quiz-slider-lower)
-                        span.quiz__slider-value-upper(data-quiz-slider-upper)
-                      label.form__control.form__control--slider
-                        p.form__control-txt Общая площадь жилого объекта капитального строительства при его новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
-                        .form__input-wrapper
-                          input.form__input.form__input--slider(name="общая площадь объекта" type="text")
-                          span.form__input-unit кв.м
-                        .quiz__slider(data-quiz-slider="square")
-                        span.quiz__slider-value-lower(data-quiz-slider-lower)
-                        span.quiz__slider-value-upper(data-quiz-slider-upper)
-                  #engineering-survey.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Укажите исходные параметры
-                    .quiz__inputs.quiz__inputs--md
-                      label.form__control.form__control--slider
-                        p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
-                        .form__input-wrapper
-                          input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
-                          span.form__input-unit кв.м
-                        .quiz__slider(data-quiz-slider="square")
-                        span.quiz__slider-value-lower(data-quiz-slider-lower)
-                        span.quiz__slider-value-upper(data-quiz-slider-upper)
-                  #project-doc-estimate.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Укажите исходные параметры
-                    .quiz__inputs
-                      .form__group
-                        label.form__control.form__control--slider
-                          p.form__control-txt Количество позиций в локальной смете
-                          .form__input-wrapper
-                            input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
-                            span.form__input-unit шт
-                          .quiz__slider(data-quiz-slider="estimateCount")
-                          span.quiz__slider-value-lower(data-quiz-slider-lower)
-                          span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        label.form__control.form__control--slider
-                          p.form__control-txt Количество позиций в объектной смете
-                          .form__input-wrapper
-                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
-                            span.form__input-unit шт
-                          .quiz__slider(data-quiz-slider="estimateCount")
-                          span.quiz__slider-value-lower(data-quiz-slider-lower)
-                          span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        label.form__control.form__control--slider
-                          p.form__control-txt Количество позиций в объектной смете
-                          .form__input-wrapper
-                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
-                            span.form__input-unit шт
-                          .quiz__slider(data-quiz-slider="estimateCount")
-                          span.quiz__slider-value-lower(data-quiz-slider-lower)
-                          span.quiz__slider-value-upper(data-quiz-slider-upper)
-                      .form__group
+      section.quiz
+        .container
+          .quiz__inner
+            .quiz__descrip
+              .quiz__descrip-inner
+                h2.quiz__title.title Рассчитайте стоимость экспертизы онлайн
+                p.quiz__descrip-decorator ответив на 5 вопросов
+                p.quiz__descrip-txt Вы получите коммерческое предложение <br> с точными стоимостью и сроками проведения негосударственной экспертизы проектной документации
+              img.quiz__descrip-img(src="images/quiz/quiz-1.png", alt="", width="615", height="291", loading="lazy")
+            #quiz.quiz__content
+              .quiz__counter(data-quiz-counter)
+                |Вопрос&nbsp;
+                span(data-quiz-counter-current)
+                |&nbsp;из&nbsp;
+                span(data-quiz-counter-total)
+              .quiz__progressbar(data-quiz-progress)
+              form#form-quiz.form.quiz__form(name="Расчёты" action="#")
+                .swiper-container
+                  .swiper-wrapper
+                    .quiz__item.swiper-slide
+                      h3.quiz__item-title Выберите тип экспертизы
+                      .quiz__inputs
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="тип экспертизы" value="первичная" type="checkbox" checked hidden)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Первичная
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="тип экспертизы" value="вторичная" type="checkbox" hidden)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Вторичная
+                    .quiz__item.swiper-slide
+                      h3.quiz__item-title Выберите тип объекта
+                      .quiz__inputs
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="тип объекта" value="жилой" type="radio" checked hidden)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Жилой
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="тип объекта" value="нежилой" type="radio" hidden)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Нежилой
+                    .quiz__item.swiper-slide
+                      h3.quiz__item-title Укажите объем экспертизы
+                      .quiz__inputs
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="объём экспертизы" value="проектная документация" type="radio" checked hidden data-quiz-branch="project-doc")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Проектная документация
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="объём экспертизы" value="проектная документация и инженерные изыскания" type="radio" hidden data-quiz-branch="project-doc")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Проектная документация и инженерные изыскания
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="объём экспертизы" value="проектная документация со сметами" type="radio" hidden data-quiz-branch="project-doc-estimate")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Проектная документация со сметами
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="объём экспертизы" value="инженерные изыскания" type="radio" hidden data-quiz-branch="engineering-survey")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Инженерные изыскания
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="объём экспертизы" value="сметная документация" type="radio" hidden data-quiz-branch="estimate")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Сметная документация
+                    .quiz__item.swiper-slide
+                      h3.quiz__item-title Назначение документации
+                      .quiz__inputs
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="назначение документации" value="для строительства или реконструкции объекта капитального строительства" type="radio" checked hidden)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Для строительства или реконструкции объекта капитального строительства
+                        .form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="назначение документации" value="для капитального ремонта объекта капитального строительства" type="radio" hidden)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Для капитального ремонта объекта капитального строительства
+                    #project-doc.quiz__item.swiper-slide(data-quiz-branched)
+                      h3.quiz__item-title Укажите исходные параметры
+                      .quiz__inputs.quiz__inputs--md
                         label.form__control.form__control--slider
                           p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
                           .form__input-wrapper
@@ -271,73 +216,129 @@ block content
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
                         label.form__control.form__control--slider
-                          p.form__control-txt Общая площадь жилого объекта капитального строительства при новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
+                          p.form__control-txt Общая площадь жилого объекта капитального строительства при его новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="общая площадь объекта" type="text")
                             span.form__input-unit кв.м
                           .quiz__slider(data-quiz-slider="square")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                  #estimate.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Сметная документация
-                    .quiz__inputs
-                      .form__group
+                    #engineering-survey.quiz__item.swiper-slide(data-quiz-branched)
+                      h3.quiz__item-title Укажите исходные параметры
+                      .quiz__inputs.quiz__inputs--md
                         label.form__control.form__control--slider
-                          p.form__control-txt Количество позиций в локальной смете
+                          p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
                           .form__input-wrapper
-                            input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
-                            span.form__input-unit шт
-                          .quiz__slider(data-quiz-slider="estimateCount")
+                            input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
+                            span.form__input-unit кв.м
+                          .quiz__slider(data-quiz-slider="square")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        label.form__control.form__control--slider
-                          p.form__control-txt Количество позиций в объектной смете
-                          .form__input-wrapper
-                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
-                            span.form__input-unit шт
-                          .quiz__slider(data-quiz-slider="estimateCount")
-                          span.quiz__slider-value-lower(data-quiz-slider-lower)
-                          span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        label.form__control.form__control--slider
-                          p.form__control-txt Количество позиций в объектной смете
-                          .form__input-wrapper
-                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
-                            span.form__input-unit шт
-                          .quiz__slider(data-quiz-slider="estimateCount")
-                          span.quiz__slider-value-lower(data-quiz-slider-lower)
-                          span.quiz__slider-value-upper(data-quiz-slider-upper)
-                  .quiz__item.swiper-slide
-                    h3.quiz__item-title Куда прислать предложение с расчетами стоимости и сроков?
-                    .quiz__results
-                      label.form__control
-                        span.form__label-txt Ваша почта (на неё пришлем расчёты)
-                        input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
-                        span.form__error
-                      label.form__control
-                        span.form__label-txt Как Вас зовут?
-                        input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
-                        span.form__error
-                      label.form__control
-                        span.form__label-txt Номер телефона
-                        input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
-                        span.form__error
-                      button.button(type="submit") Получить предложение с расчётами
-                      .form__control.form__control--agreement
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
-                          span.form__checkbox-styled.form__checkbox-styled--dark
-                          span.form__checkbox-txt Согласен на
+                    #project-doc-estimate.quiz__item.swiper-slide(data-quiz-branched)
+                      h3.quiz__item-title Укажите исходные параметры
+                      .quiz__inputs
+                        .form__group
+                          label.form__control.form__control--slider
+                            p.form__control-txt Количество позиций в локальной смете
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
+                              span.form__input-unit шт
+                            .quiz__slider(data-quiz-slider="estimateCount")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                          label.form__control.form__control--slider
+                            p.form__control-txt Количество позиций в объектной смете
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                              span.form__input-unit шт
+                            .quiz__slider(data-quiz-slider="estimateCount")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                          label.form__control.form__control--slider
+                            p.form__control-txt Количество позиций в объектной смете
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                              span.form__input-unit шт
+                            .quiz__slider(data-quiz-slider="estimateCount")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                        .form__group
+                          label.form__control.form__control--slider
+                            p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
+                              span.form__input-unit кв.м
+                            .quiz__slider(data-quiz-slider="square")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                          label.form__control.form__control--slider
+                            p.form__control-txt Общая площадь жилого объекта капитального строительства при новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="общая площадь объекта" type="text")
+                              span.form__input-unit кв.м
+                            .quiz__slider(data-quiz-slider="square")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                    #estimate.quiz__item.swiper-slide(data-quiz-branched)
+                      h3.quiz__item-title Сметная документация
+                      .quiz__inputs
+                        .form__group
+                          label.form__control.form__control--slider
+                            p.form__control-txt Количество позиций в локальной смете
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
+                              span.form__input-unit шт
+                            .quiz__slider(data-quiz-slider="estimateCount")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                          label.form__control.form__control--slider
+                            p.form__control-txt Количество позиций в объектной смете
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                              span.form__input-unit шт
+                            .quiz__slider(data-quiz-slider="estimateCount")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                          label.form__control.form__control--slider
+                            p.form__control-txt Количество позиций в объектной смете
+                            .form__input-wrapper
+                              input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                              span.form__input-unit шт
+                            .quiz__slider(data-quiz-slider="estimateCount")
+                            span.quiz__slider-value-lower(data-quiz-slider-lower)
+                            span.quiz__slider-value-upper(data-quiz-slider-upper)
+                    .quiz__item.swiper-slide
+                      h3.quiz__item-title Куда прислать предложение с расчетами стоимости и сроков?
+                      .quiz__results
+                        label.form__control
+                          span.form__label-txt Ваша почта (на неё пришлем расчёты)
+                          input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
                           span.form__error
-                        button(type="button") обработку персональных данных
-                      .form__control.form__control--agreement
-                        label.form__checkbox-wrapper
-                          input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
-                          span.form__checkbox-styled.form__checkbox-styled--dark
-                          span.form__checkbox-txt Работаем по
+                        label.form__control
+                          span.form__label-txt Как Вас зовут?
+                          input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
                           span.form__error
-                        button(type="button") административному регламенту
-            .quiz__controls(data-quiz-controls)
-              button.quiz__button-next.button(type="button" data-quiz-button-next)
-                |Далее
-                +icon('quiz__button-next-icon', 'arrow-next')
-              button.quiz__button-prev(type="button" data-quiz-button-prev) Назад
+                        label.form__control
+                          span.form__label-txt Номер телефона
+                          input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
+                          span.form__error
+                        button.button(type="submit") Получить предложение с расчётами
+                        .form__control.form__control--agreement
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                            span.form__checkbox-styled.form__checkbox-styled--dark
+                            span.form__checkbox-txt Согласен на
+                            span.form__error
+                          button(type="button") обработку персональных данных
+                        .form__control.form__control--agreement
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                            span.form__checkbox-styled.form__checkbox-styled--dark
+                            span.form__checkbox-txt Работаем по
+                            span.form__error
+                          button(type="button") административному регламенту
+              .quiz__controls(data-quiz-controls)
+                button.quiz__button-next.button(type="button" data-quiz-button-next)
+                  |Далее
+                  +icon('quiz__button-next-icon', 'arrow-next')
+                button.quiz__button-prev(type="button" data-quiz-button-prev) Назад
