@@ -41,16 +41,14 @@ block content
             h2.intro__form-title Закажите звонок
             p.intro__form-txt Оставьте свои данные, <br> и наш специалист позвонит Вам <br> и ответит на ваши вопросы
             form#form-callback.form(name="обратный звонок" action="#")
-              .form__control
-                label
-                  span.form__label-txt Как Вас зовут?
-                  input.form__input(name="callback-name" type="text" placeholder="Александр Гельевич" data-form-name)
-                  span.form__error
-              .form__control
-                label
-                  span.form__label-txt Номер телефона
-                  input.form__input(name="callback-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
-                  span.form__error
+              label.form__control
+                span.form__label-txt Как Вас зовут?
+                input.form__input(name="callback-name" type="text" placeholder="Александр Гельевич" data-form-name)
+                span.form__error
+              label.form__control
+                span.form__label-txt Номер телефона
+                input.form__input(name="callback-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
+                span.form__error
               button.button(type="submit") Заказать звонок
               .form__control
                 label.form__checkbox-wrapper
@@ -154,7 +152,7 @@ block content
                   .quiz__item.swiper-slide
                     h3.quiz__item-title Выберите тип объекта
                     .quiz__inputs
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="тип объекта" value="жилой" type="radio" checked hidden)
                           span.form__checkbox-styled
@@ -194,13 +192,13 @@ block content
                           span.form__checkbox-txt Сметная документация
                   .quiz__item.swiper-slide
                     h3.quiz__item-title Назначение документации
-                    ul.quiz__inputs
-                      li.form__control
+                    .quiz__inputs
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="назначение документации" value="для строительства или реконструкции объекта капитального строительства" type="radio" checked hidden)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Для строительства или реконструкции объекта капитального строительства
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="назначение документации" value="для капитального ремонта объекта капитального строительства" type="radio" hidden)
                           span.form__checkbox-styled
@@ -208,7 +206,7 @@ block content
                   #project-doc.quiz__item.swiper-slide(data-quiz-branched)
                     h3.quiz__item-title Укажите исходные параметры
                     .quiz__inputs.quiz__inputs--md
-                      .form__control.form__control--slider
+                      label.form__control.form__control--slider
                         p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
                         .form__input-wrapper
                           input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
@@ -216,7 +214,7 @@ block content
                         .quiz__slider(data-quiz-slider="square")
                         span.quiz__slider-value-lower(data-quiz-slider-lower)
                         span.quiz__slider-value-upper(data-quiz-slider-upper)
-                      .form__control.form__control--slider
+                      label.form__control.form__control--slider
                         p.form__control-txt Общая площадь жилого объекта капитального строительства при его новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
                         .form__input-wrapper
                           input.form__input.form__input--slider(name="общая площадь объекта" type="text")
@@ -227,7 +225,7 @@ block content
                   #engineering-survey.quiz__item.swiper-slide(data-quiz-branched)
                     h3.quiz__item-title Укажите исходные параметры
                     .quiz__inputs.quiz__inputs--md
-                      .form__control.form__control--slider
+                      label.form__control.form__control--slider
                         p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
                         .form__input-wrapper
                           input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
@@ -239,7 +237,7 @@ block content
                     h3.quiz__item-title Укажите исходные параметры
                     .quiz__inputs
                       .form__group
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Количество позиций в локальной смете
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
@@ -247,7 +245,7 @@ block content
                           .quiz__slider(data-quiz-slider="estimateCount")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Количество позиций в объектной смете
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
@@ -255,7 +253,7 @@ block content
                           .quiz__slider(data-quiz-slider="estimateCount")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Количество позиций в объектной смете
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
@@ -264,7 +262,7 @@ block content
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
                       .form__group
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
@@ -272,7 +270,7 @@ block content
                           .quiz__slider(data-quiz-slider="square")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Общая площадь жилого объекта капитального строительства при новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="общая площадь объекта" type="text")
@@ -284,7 +282,7 @@ block content
                     h3.quiz__item-title Сметная документация
                     .quiz__inputs
                       .form__group
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Количество позиций в локальной смете
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
@@ -292,7 +290,7 @@ block content
                           .quiz__slider(data-quiz-slider="estimateCount")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Количество позиций в объектной смете
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
@@ -300,7 +298,7 @@ block content
                           .quiz__slider(data-quiz-slider="estimateCount")
                           span.quiz__slider-value-lower(data-quiz-slider-lower)
                           span.quiz__slider-value-upper(data-quiz-slider-upper)
-                        .form__control.form__control--slider
+                        label.form__control.form__control--slider
                           p.form__control-txt Количество позиций в объектной смете
                           .form__input-wrapper
                             input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
@@ -311,21 +309,18 @@ block content
                   .quiz__item.swiper-slide
                     h3.quiz__item-title Куда прислать предложение с расчетами стоимости и сроков?
                     .quiz__results
-                      .form__control
-                        label
-                          span.form__label-txt Ваша почта (на неё пришлем расчёты)
-                          input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
-                          span.form__error
-                      .form__control
-                        label
-                          span.form__label-txt Как Вас зовут?
-                          input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
-                          span.form__error
-                      .form__control
-                        label
-                          span.form__label-txt Номер телефона
-                          input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
-                          span.form__error
+                      label.form__control
+                        span.form__label-txt Ваша почта (на неё пришлем расчёты)
+                        input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
+                        span.form__error
+                      label.form__control
+                        span.form__label-txt Как Вас зовут?
+                        input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
+                        span.form__error
+                      label.form__control
+                        span.form__label-txt Номер телефона
+                        input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
+                        span.form__error
                       button.button(type="submit") Получить предложение с расчётами
                       .form__control.form__control--agreement
                         label.form__checkbox-wrapper

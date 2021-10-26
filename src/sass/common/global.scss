@@ -207,32 +207,3 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-
-.overlay {
-  position: fixed;
-
-  z-index: 9;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  opacity: 0;
-  transition: 200ms ease-in-out;
-  background: rgba(0, 0, 0, 0.5);
-
-  pointer-events: none;
-
-  cursor: pointer;
-
-  &.active {
-    opacity: 1;
-
-    pointer-events: all;
-  }
-}
-
-.scroll-hidden {
-  overflow: hidden;
-}
