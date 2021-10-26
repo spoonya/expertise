@@ -3,6 +3,7 @@ import IMask from 'imask';
 import wNumb from 'wnumb';
 
 import { CLASSES } from '../constants';
+import isMediaBreakpoint from '../helpers/isMedia';
 
 class Quiz {
   constructor(selector) {
@@ -73,12 +74,20 @@ class Quiz {
       this._controlPrevButtonDisplay();
       this._updateCounter();
       this._updateProgresBar(this.swiperQuiz.realIndex + 1);
+      this._fixHeight();
+    });
+  }
 
-      if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
-        this._changeCounterText();
+  _fixHeight() {
+    if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
+      this._changeCounterText();
+
+      if (isMediaBreakpoint(767.98)) {
+        this.quiz.querySelector('.swiper-container').style.minHeight = '60rem';
+      } else {
         this.quiz.querySelector('.swiper-container').style.minHeight = '52rem';
       }
-    });
+    }
   }
 
   _controlButtonsDisplay() {

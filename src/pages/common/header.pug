@@ -2,9 +2,9 @@ mixin header(modif=null)
   header.header(class = modif)
     .container
       .info
-        .info__group
-          +icon('info__logo', 'logo')
-          button.header__rules(type="button")
+        .info__logo
+          +icon('info__logo-icon', 'logo')
+          a.header__rules(href="https://souzprofexpert.ru/upload/files/regulation.PDF" rel="noopener" target="_blank")
             +icon('info__icon', 'file')
             span.header__rules-txt
               span Административный&nbsp;

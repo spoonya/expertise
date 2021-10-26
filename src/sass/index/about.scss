@@ -1,10 +1,18 @@
 .about {
   margin-bottom: 14rem;
+
+  @include media-tablet-lg {
+    margin-bottom: 70px;
+  }
 }
 
 .about__inner {
   display: flex;
   justify-content: space-between;
+
+  @include media-tablet-lg {
+    flex-direction: column;
+  }
 }
 
 .about__content {
@@ -13,6 +21,10 @@
   justify-content: space-between;
 
   margin-right: 3rem;
+
+  @include media-tablet-lg {
+    margin-right: 15px;
+  }
 }
 
 .about__title {
@@ -47,6 +59,11 @@
 
   background-color: $color-primary-psi;
   border-radius: $border-r-xl;
+
+  @include media-smartphone-sm {
+    font-size: 16px;
+    padding: 15px;
+  }
 }
 
 .about__gains {
@@ -61,12 +78,25 @@
 
     margin-bottom: 2.9rem;
   }
+
+  @include media-tablet-lg {
+    padding: 25px 20px;
+
+    margin-bottom: 30px;
+
+    &-txt {
+      text-align: center;
+    }
+  }
 }
 
 .about__list {
   display: flex;
 
   &-item {
+    display: flex;
+    flex-direction: column;
+
     font-size: 1.8rem;
 
     max-width: 29.5rem;
@@ -94,6 +124,35 @@
       }
     }
   }
+
+  @include media-tablet-lg {
+    justify-content: space-between;
+
+    &-item {
+      align-items: center;
+
+      width: 48%;
+      text-align: center;
+
+      max-width: unset;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include media-smartphone-lg {
+    flex-wrap: wrap;
+
+    &-item {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }
 
 .about__img {
@@ -103,4 +162,14 @@
   border-radius: $border-r-lg;
 
   object-fit: cover;
+
+  @include media-laptop {
+    max-width: 40rem;
+  }
+
+  @include media-tablet-lg {
+    max-width: 37rem;
+
+    margin: 0 auto;
+  }
 }

@@ -17,8 +17,6 @@
   display: flex;
   align-items: center;
 
-  max-width: 15.8rem;
-
   &:hover {
     span {
       color: $color-tertiary-alpha;
@@ -38,6 +36,14 @@
       border-bottom: 1px dashed $color-primary-alpha;
 
       transition: color 0.1s linear, border-color 0.1s linear;
+    }
+  }
+
+  @include media-laptop {
+    &-txt {
+      span {
+        display: inline;
+      }
     }
   }
 }

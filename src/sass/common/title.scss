@@ -4,6 +4,10 @@
   font-weight: 500;
 
   @include media-tablet-lg {
-    font-size: 24px;
+    font-size: 30px;
+  }
+
+  @include media-smartphone-sm {
+    font-size: 27px;
   }
 }
