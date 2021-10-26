@@ -7,7 +7,7 @@
 .form__group {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 
   margin-bottom: 2rem;
 
@@ -20,6 +20,8 @@
   }
 
   .form__control {
+    flex: 1;
+
     &:not(:last-child) {
       margin-right: 19px;
 
@@ -34,6 +36,20 @@
   position: relative;
 
   margin-bottom: 20px;
+
+  &-txt {
+    margin-bottom: 14px;
+
+    align-self: flex-start;
+  }
+
+  &--slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 6rem;
+  }
 
   &--agreement {
     display: flex;
@@ -88,6 +104,7 @@
   color: $color-form-error;
 
   visibility: hidden;
+  white-space: nowrap;
 }
 
 .form__input {
@@ -98,6 +115,29 @@
   border: 1px solid $color-secondary-gamma;
   border-radius: $border-r-lg;
   background-color: $color-primary-beta;
+
+  &-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &-unit {
+    position: absolute;
+
+    top: 50%;
+    right: 2rem;
+
+    transform: translateY(-50%);
+
+    font-size: 1.8rem;
+    color: $color-tertiary-psi;
+  }
+
+  &--slider {
+    box-shadow: inset 0px 1px 1px rgba(22, 11, 86, 0.1);
+    border: 0;
+    color: $color-tertiary-psi;
+  }
 }
 
 .form__checkbox-wrapper {

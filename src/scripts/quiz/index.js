@@ -1,3 +1,7 @@
+import noUiSlider from 'nouislider';
+import IMask from 'imask';
+import wNumb from 'wnumb';
+
 import { CLASSES } from '../constants';
 
 class Quiz {
@@ -6,7 +10,23 @@ class Quiz {
     if (!this.quiz) return;
 
     this.config = {
-      questionsCount: 5
+      questionsCount: 5,
+      numFormat: wNumb({
+        thousand: ' ',
+        decimals: 0
+      }),
+      sliders: {
+        square: {
+          mask: null,
+          min: 100,
+          max: 1000000
+        },
+        estimateCount: {
+          mask: null,
+          min: 3,
+          max: 300
+        }
+      }
     };
 
     this.quizElements = {
@@ -15,6 +35,7 @@ class Quiz {
       counterTotal: this.quiz.querySelector('[data-quiz-counter-total]'),
       progressBar: this.quiz.querySelector('[data-quiz-progress]'),
       progressBarSteps: null,
+      sliders: this.quiz.querySelectorAll('[data-quiz-slider]'),
       controls: this.quiz.querySelector('[data-quiz-controls]'),
       buttonNext: this.quiz.querySelector('[data-quiz-button-next]'),
       buttonPrev: this.quiz.querySelector('[data-quiz-button-prev]'),
@@ -22,6 +43,7 @@ class Quiz {
       branchedQuestions: this.quiz.querySelectorAll('[data-quiz-branched]')
     };
 
+    // eslint-disable-next-line no-undef
     this.swiperQuiz = new Swiper(`${selector} .swiper-container`, {
       slidesPerColumnFill: 'row',
       autoHeight: true,
@@ -54,6 +76,7 @@ class Quiz {
 
       if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
         this._changeCounterText();
+        this.quiz.querySelector('.swiper-container').style.minHeight = '52rem';
       }
     });
   }
@@ -124,10 +147,6 @@ class Quiz {
     }
   }
 
-  _changeCounterText() {
-    this.quizElements.counter.textContent = 'Почти готово';
-  }
-
   _initProgressBar() {
     const progressStepTemplate =
       '<div class="quiz__progressbar-step" data-quiz-progress-step=""></div>';
@@ -151,10 +170,93 @@ class Quiz {
       );
   }
 
+  _getSliderInput(slider) {
+    return slider.closest('.form__control').querySelector('input');
+  }
+
+  _updateSliderInput(slider) {
+    const input = this._getSliderInput(slider);
+    input.value = slider.noUiSlider.get();
+    this.config.sliders[slider.dataset.quizSlider].mask.updateValue(
+      slider.noUiSlider.get()
+    );
+  }
+
+  _updateSliderOnInput(input, slider) {
+    input.addEventListener('change', () => {
+      slider.noUiSlider.set(input.value);
+    });
+  }
+
+  _setSliderMaxMinLabels(slider) {
+    const lowerValue = slider
+      .closest('.form__control')
+      .querySelector('[data-quiz-slider-lower]');
+    const upperValue = slider
+      .closest('.form__control')
+      .querySelector('[data-quiz-slider-upper]');
+
+    lowerValue.textContent = this.config.numFormat.to(
+      this.config.sliders[slider.dataset.quizSlider].min
+    );
+    upperValue.textContent = this.config.numFormat.to(
+      this.config.sliders[slider.dataset.quizSlider].max
+    );
+  }
+
+  _setNumberMask({ quizSlider, input, min, max }) {
+    this.config.sliders[quizSlider].mask = IMask(input, {
+      mask: Number,
+      scale: 0,
+      signed: false,
+      thousandsSeparator: ' ',
+      padFractionalZeros: false,
+      normalizeZeros: true,
+      radix: ',',
+      mapToRadix: ['.'],
+      min,
+      max
+    });
+  }
+
+  _initSliders() {
+    this.quizElements.sliders.forEach((slider) => {
+      const { quizSlider } = slider.dataset;
+
+      noUiSlider.create(slider, {
+        start: this.config.sliders[quizSlider].min,
+        step: 1,
+        connect: 'lower',
+        format: this.config.numFormat,
+        range: {
+          min: this.config.sliders[quizSlider].min,
+          max: this.config.sliders[quizSlider].max
+        }
+      });
+
+      this._setSliderMaxMinLabels(slider);
+
+      this._setNumberMask({
+        quizSlider,
+        input: this._getSliderInput(slider),
+        min: this.config.sliders[quizSlider].min,
+        max: this.config.sliders[quizSlider].max
+      });
+
+      this._updateSliderOnInput(this._getSliderInput(slider), slider);
+      slider.noUiSlider.on('update', () => this._updateSliderInput(slider));
+    });
+  }
+
+  _changeCounterText() {
+    this.quizElements.counter.textContent = 'Почти готово';
+  }
+
   _onInit() {
     this._setCounterInitValues();
     this._controlBranches();
     this._initProgressBar();
+    this._initSliders();
   }
 }
 

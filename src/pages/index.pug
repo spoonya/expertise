@@ -140,54 +140,54 @@ block content
                 .swiper-wrapper
                   .quiz__item.swiper-slide
                     h3.quiz__item-title Выберите тип экспертизы
-                    ul.quiz__inputs
-                      li.form__control
+                    .quiz__inputs
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="тип экспертизы" value="первичная" type="checkbox" checked hidden)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Первичная
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="тип экспертизы" value="вторичная" type="checkbox" hidden)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Вторичная
                   .quiz__item.swiper-slide
                     h3.quiz__item-title Выберите тип объекта
-                    ul.quiz__inputs
+                    .quiz__inputs
                       li.form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="тип объекта" value="жилой" type="radio" checked hidden)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Жилой
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="тип объекта" value="нежилой" type="radio" hidden)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Нежилой
                   .quiz__item.swiper-slide
                     h3.quiz__item-title Укажите объем экспертизы
-                    ul.quiz__inputs
-                      li.form__control
+                    .quiz__inputs
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="объём экспертизы" value="проектная документация" type="radio" checked hidden data-quiz-branch="project-doc")
                           span.form__checkbox-styled
                           span.form__checkbox-txt Проектная документация
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="объём экспертизы" value="проектная документация и инженерные изыскания" type="radio" hidden data-quiz-branch="project-doc")
                           span.form__checkbox-styled
                           span.form__checkbox-txt Проектная документация и инженерные изыскания
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="объём экспертизы" value="проектная документация со сметами" type="radio" hidden data-quiz-branch="project-doc-estimate")
                           span.form__checkbox-styled
                           span.form__checkbox-txt Проектная документация со сметами
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="объём экспертизы" value="инженерные изыскания" type="radio" hidden data-quiz-branch="engineering-survey")
                           span.form__checkbox-styled
                           span.form__checkbox-txt Инженерные изыскания
-                      li.form__control
+                      .form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(name="объём экспертизы" value="сметная документация" type="radio" hidden data-quiz-branch="estimate")
                           span.form__checkbox-styled
@@ -206,54 +206,141 @@ block content
                           span.form__checkbox-styled
                           span.form__checkbox-txt Для капитального ремонта объекта капитального строительства
                   #project-doc.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Проектная документация
-                    ul.quiz__inputs
-                      li.form__control
-                      li.form__control
-                  #project-doc-estimate.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Проектная документация со сметами
-                    ul.quiz__inputs
-                      li.form__control
-                      li.form__control
+                    h3.quiz__item-title Укажите исходные параметры
+                    .quiz__inputs.quiz__inputs--md
+                      .form__control.form__control--slider
+                        p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
+                        .form__input-wrapper
+                          input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
+                          span.form__input-unit кв.м
+                        .quiz__slider(data-quiz-slider="square")
+                        span.quiz__slider-value-lower(data-quiz-slider-lower)
+                        span.quiz__slider-value-upper(data-quiz-slider-upper)
+                      .form__control.form__control--slider
+                        p.form__control-txt Общая площадь жилого объекта капитального строительства при его новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
+                        .form__input-wrapper
+                          input.form__input.form__input--slider(name="общая площадь объекта" type="text")
+                          span.form__input-unit кв.м
+                        .quiz__slider(data-quiz-slider="square")
+                        span.quiz__slider-value-lower(data-quiz-slider-lower)
+                        span.quiz__slider-value-upper(data-quiz-slider-upper)
                   #engineering-survey.quiz__item.swiper-slide(data-quiz-branched)
-                    h3.quiz__item-title Инженерные изыскания
-                    ul.quiz__inputs
-                      li.form__control
-                      li.form__control
+                    h3.quiz__item-title Укажите исходные параметры
+                    .quiz__inputs.quiz__inputs--md
+                      .form__control.form__control--slider
+                        p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
+                        .form__input-wrapper
+                          input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
+                          span.form__input-unit кв.м
+                        .quiz__slider(data-quiz-slider="square")
+                        span.quiz__slider-value-lower(data-quiz-slider-lower)
+                        span.quiz__slider-value-upper(data-quiz-slider-upper)
+                  #project-doc-estimate.quiz__item.swiper-slide(data-quiz-branched)
+                    h3.quiz__item-title Укажите исходные параметры
+                    .quiz__inputs
+                      .form__group
+                        .form__control.form__control--slider
+                          p.form__control-txt Количество позиций в локальной смете
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
+                            span.form__input-unit шт
+                          .quiz__slider(data-quiz-slider="estimateCount")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                        .form__control.form__control--slider
+                          p.form__control-txt Количество позиций в объектной смете
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                            span.form__input-unit шт
+                          .quiz__slider(data-quiz-slider="estimateCount")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                        .form__control.form__control--slider
+                          p.form__control-txt Количество позиций в объектной смете
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                            span.form__input-unit шт
+                          .quiz__slider(data-quiz-slider="estimateCount")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                      .form__group
+                        .form__control.form__control--slider
+                          p.form__control-txt Площадь земли, измеряемая в пределах периметра жилого объекта капитального строительства
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="площадь земли в пределах периметра" type="text")
+                            span.form__input-unit кв.м
+                          .quiz__slider(data-quiz-slider="square")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                        .form__control.form__control--slider
+                          p.form__control-txt Общая площадь жилого объекта капитального строительства при новом строительстве либо общая площадь помещений, подлежащих реконструкции или капитальному ремонту
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="общая площадь объекта" type="text")
+                            span.form__input-unit кв.м
+                          .quiz__slider(data-quiz-slider="square")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
                   #estimate.quiz__item.swiper-slide(data-quiz-branched)
                     h3.quiz__item-title Сметная документация
-                  .quiz__item.quiz__item--high.swiper-slide
+                    .quiz__inputs
+                      .form__group
+                        .form__control.form__control--slider
+                          p.form__control-txt Количество позиций в локальной смете
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="количество позиций в локальной смете" type="text")
+                            span.form__input-unit шт
+                          .quiz__slider(data-quiz-slider="estimateCount")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                        .form__control.form__control--slider
+                          p.form__control-txt Количество позиций в объектной смете
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                            span.form__input-unit шт
+                          .quiz__slider(data-quiz-slider="estimateCount")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                        .form__control.form__control--slider
+                          p.form__control-txt Количество позиций в объектной смете
+                          .form__input-wrapper
+                            input.form__input.form__input--slider(name="количество позиций в объектной смете" type="text")
+                            span.form__input-unit шт
+                          .quiz__slider(data-quiz-slider="estimateCount")
+                          span.quiz__slider-value-lower(data-quiz-slider-lower)
+                          span.quiz__slider-value-upper(data-quiz-slider-upper)
+                  .quiz__item.swiper-slide
                     h3.quiz__item-title Куда прислать предложение с расчетами стоимости и сроков?
-                    .form__control
-                      label
-                      span.form__label-txt Ваша почта (на неё пришлем расчёты)
-                      input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
-                      span.form__error
-                    .form__control
-                      label
-                      span.form__label-txt Как Вас зовут?
-                      input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
-                      span.form__error
-                    .form__control
-                      label
-                      span.form__label-txt Номер телефона
-                      input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
-                      span.form__error
-                    button.button(type="submit") Получить предложение с расчётами
-                    .form__control.form__control--agreement
-                      label.form__checkbox-wrapper
-                        input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
-                        span.form__checkbox-styled.form__checkbox-styled--dark
-                        span.form__checkbox-txt Согласен на
-                        span.form__error
-                      button(type="button") обработку персональных данных
-                    .form__control.form__control--agreement
-                      label.form__checkbox-wrapper
-                        input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
-                        span.form__checkbox-styled.form__checkbox-styled--dark
-                        span.form__checkbox-txt Работаем по
-                        span.form__error
-                      button(type="button") административному регламенту
+                    .quiz__results
+                      .form__control
+                        label
+                          span.form__label-txt Ваша почта (на неё пришлем расчёты)
+                          input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
+                          span.form__error
+                      .form__control
+                        label
+                          span.form__label-txt Как Вас зовут?
+                          input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
+                          span.form__error
+                      .form__control
+                        label
+                          span.form__label-txt Номер телефона
+                          input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
+                          span.form__error
+                      button.button(type="submit") Получить предложение с расчётами
+                      .form__control.form__control--agreement
+                        label.form__checkbox-wrapper
+                          input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                          span.form__checkbox-styled.form__checkbox-styled--dark
+                          span.form__checkbox-txt Согласен на
+                          span.form__error
+                        button(type="button") обработку персональных данных
+                      .form__control.form__control--agreement
+                        label.form__checkbox-wrapper
+                          input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                          span.form__checkbox-styled.form__checkbox-styled--dark
+                          span.form__checkbox-txt Работаем по
+                          span.form__error
+                        button(type="button") административному регламенту
             .quiz__controls(data-quiz-controls)
               button.quiz__button-next.button(type="button" data-quiz-button-next)
                 |Далее

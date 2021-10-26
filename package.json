@@ -65,7 +65,8 @@
     "imask": "^6.2.2",
     "normalize.css": "^8.0.1",
     "nouislider": "^15.5.0",
-    "regenerator-runtime": "^0.11.1"
+    "regenerator-runtime": "^0.11.1",
+    "wnumb": "^1.2.0"
   },
   "editorconfig-cli": [
     "*.json",

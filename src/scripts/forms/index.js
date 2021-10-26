@@ -21,7 +21,7 @@ class FormValidation {
       userPhone: this.form.querySelector('[data-form-phone]'),
       userEmail: this.form.querySelector('[data-form-email]'),
       userMsg: this.form.querySelector('[data-form-message]'),
-      userAgreement: this.form.querySelector('[data-form-agreement]'),
+      userAgreements: this.form.querySelectorAll('[data-form-agreement]'),
       userSelects: [...this.form.querySelectorAll('[data-form-select]')]
     };
 
@@ -200,16 +200,18 @@ class FormValidation {
     return isValid;
   }
 
-  _checkAgreement(checkbox, config) {
-    if (!checkbox.checked && config.isRequired) {
-      this._setError(checkbox, config.errors.unchecked);
+  _checkAgreements(checkboxes, config) {
+    checkboxes.forEach((checkbox) => {
+      if (!checkbox.checked && config.isRequired) {
+        this._setError(checkbox, config.errors.unchecked);
 
-      return false;
-    }
+        return false;
+      }
 
-    this._setSuccess(checkbox);
+      this._setSuccess(checkbox);
 
-    return true;
+      return true;
+    });
   }
 
   _showAlert(isSuccess = true) {
@@ -340,10 +342,10 @@ class FormValidation {
         );
       }
 
-      if (this.formElements.userAgreement) {
+      if (this.formElements.userAgreements) {
         isValid.push(
-          this._checkAgreement(
-            this.formElements.userAgreement,
+          this._checkAgreements(
+            this.formElements.userAgreements,
             config.userAgreement
           )
         );
