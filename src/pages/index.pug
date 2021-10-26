@@ -55,7 +55,7 @@ block content
               .form__control
                 label.form__checkbox-wrapper
                   input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
-                  span.form__checkbox-styled
+                  span.form__checkbox-styled.form__checkbox-styled--dark
                   span.form__checkbox-txt Согласен на обработку персональных данных
                   span.form__error
 
@@ -129,12 +129,12 @@ block content
               p.quiz__descrip-txt Вы получите коммерческое предложение <br> с точными стоимостью и сроками проведения негосударственной экспертизы проектной документации
             img.quiz__descrip-img(src="images/quiz/quiz-1.png", alt="", width="615", height="291", loading="lazy")
           #quiz.quiz__content
-            .quiz__counter
+            .quiz__counter(data-quiz-counter)
               |Вопрос&nbsp;
               span(data-quiz-counter-current)
               |&nbsp;из&nbsp;
               span(data-quiz-counter-total)
-            .quiz__progressbar(data-quiz-progressbar)
+            .quiz__progressbar(data-quiz-progress)
             form#form-quiz.form.quiz__form(name="Расчёты" action="#")
               .swiper-container
                 .swiper-wrapper
@@ -205,8 +205,57 @@ block content
                           input.form__checkbox(name="назначение документации" value="для капитального ремонта объекта капитального строительства" type="radio" hidden)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Для капитального ремонта объекта капитального строительства
+                  #project-doc.quiz__item.swiper-slide(data-quiz-branched)
+                    h3.quiz__item-title Проектная документация
+                    ul.quiz__inputs
+                      li.form__control
+                      li.form__control
+                  #project-doc-estimate.quiz__item.swiper-slide(data-quiz-branched)
+                    h3.quiz__item-title Проектная документация со сметами
+                    ul.quiz__inputs
+                      li.form__control
+                      li.form__control
+                  #engineering-survey.quiz__item.swiper-slide(data-quiz-branched)
+                    h3.quiz__item-title Инженерные изыскания
+                    ul.quiz__inputs
+                      li.form__control
+                      li.form__control
+                  #estimate.quiz__item.swiper-slide(data-quiz-branched)
+                    h3.quiz__item-title Сметная документация
+                  .quiz__item.quiz__item--high.swiper-slide
+                    h3.quiz__item-title Куда прислать предложение с расчетами стоимости и сроков?
+                    .form__control
+                      label
+                      span.form__label-txt Ваша почта (на неё пришлем расчёты)
+                      input.form__input(name="calculation-email" type="email" placeholder="pochta@mail.ru" data-form-email)
+                      span.form__error
+                    .form__control
+                      label
+                      span.form__label-txt Как Вас зовут?
+                      input.form__input(name="calculation-name" type="text" placeholder="Иван" data-form-name)
+                      span.form__error
+                    .form__control
+                      label
+                      span.form__label-txt Номер телефона
+                      input.form__input(name="calculation-phone" type="tel" placeholder="+7 (999) 999-99-99" data-form-phone)
+                      span.form__error
+                    button.button(type="submit") Получить предложение с расчётами
+                    .form__control.form__control--agreement
+                      label.form__checkbox-wrapper
+                        input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                        span.form__checkbox-styled.form__checkbox-styled--dark
+                        span.form__checkbox-txt Согласен на
+                        span.form__error
+                      button(type="button") обработку персональных данных
+                    .form__control.form__control--agreement
+                      label.form__checkbox-wrapper
+                        input.form__checkbox(name="agreement" type="checkbox" checked hidden data-form-agreement)
+                        span.form__checkbox-styled.form__checkbox-styled--dark
+                        span.form__checkbox-txt Работаем по
+                        span.form__error
+                      button(type="button") административному регламенту
             .quiz__controls(data-quiz-controls)
-              button.quiz__button-next.button(data-quiz-button-next)
+              button.quiz__button-next.button(type="button" data-quiz-button-next)
                 |Далее
                 +icon('quiz__button-next-icon', 'arrow-next')
-              button.quiz__button-prev(data-quiz-button-prev) Назад
+              button.quiz__button-prev(type="button" data-quiz-button-prev) Назад
