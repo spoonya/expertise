@@ -70,7 +70,7 @@
       &::after {
         position: absolute;
 
-        bottom: -7rem;
+        bottom: -60px;
 
         display: block;
 
@@ -78,7 +78,7 @@
 
         height: 60px;
         width: 1px;
-        border: 1px dashed $color-primary-alpha;
+        border-left: 1px dashed $color-primary-alpha;
       }
     }
   }

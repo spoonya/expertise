@@ -11,6 +11,7 @@ class Quiz {
     if (!this.quiz) return;
 
     this.config = {
+      branchedQuestionOnIndex: 4,
       questionsCount: 5,
       numFormat: wNumb({
         thousand: ' ',
@@ -70,18 +71,18 @@ class Quiz {
     });
 
     this.swiperQuiz.on('slideChange', () => {
+      this.swiperQuiz.update();
       this._controlButtonsDisplay();
       this._controlPrevButtonDisplay();
       this._updateCounter();
       this._updateProgresBar(this.swiperQuiz.realIndex + 1);
       this._fixHeight();
+      this._changeCounterText();
     });
   }
 
   _fixHeight() {
     if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
-      this._changeCounterText();
-
       if (isMediaBreakpoint(767.98)) {
         this.quiz.querySelector('.swiper-container').style.minHeight = '60rem';
       } else {
@@ -114,6 +115,20 @@ class Quiz {
     this.quizElements.counterTotal.textContent = this.config.questionsCount;
   }
 
+  _moveBranchedSlide(quizBranch) {
+    const slideCopy = this.quiz.querySelector(`#${quizBranch}`);
+    const insertAfterEL = this.quiz.querySelector(
+      '[data-quiz-branched]'
+    ).previousElementSibling;
+
+    this.quiz.querySelector(`#${quizBranch}`).remove();
+    insertAfterEL.insertAdjacentHTML('afterend', slideCopy.outerHTML);
+
+    this.quizElements.branchedQuestions = this.quiz.querySelectorAll(
+      '[data-quiz-branched]'
+    );
+  }
+
   _setActiveBranch(quizBranch) {
     this.quizElements.branchedQuestions.forEach((slide) => {
       if (slide.id !== quizBranch) {
@@ -140,6 +155,7 @@ class Quiz {
         const { quizBranch } = input.dataset;
 
         this._setActiveBranch(quizBranch);
+        this._moveBranchedSlide(quizBranch);
       });
     });
   }
@@ -258,14 +274,16 @@ class Quiz {
   }
 
   _changeCounterText() {
-    this.quizElements.counter.textContent = 'Почти готово';
+    if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
+      this.quizElements.counter.textContent = 'Почти готово';
+    }
   }
 
   _onInit() {
     this._setCounterInitValues();
-    this._controlBranches();
-    this._initProgressBar();
     this._initSliders();
+    this._initProgressBar();
+    this._controlBranches();
   }
 }
 
