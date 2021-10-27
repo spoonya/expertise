@@ -190,10 +190,10 @@ class Quiz {
 
   _updateSliderInput(slider) {
     const input = this._getSliderInput(slider);
-    input.value = slider.noUiSlider.get();
-    this.config.sliders[slider.dataset.quizSlider].mask.updateValue(
-      slider.noUiSlider.get()
-    );
+
+    this.config.sliders[slider.dataset.quizSlider].mask.value =
+      slider.noUiSlider.get();
+    input.value = this.config.sliders[slider.dataset.quizSlider].mask.value;
   }
 
   _updateSliderOnInput(input, slider) {

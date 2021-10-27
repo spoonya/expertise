@@ -1,0 +1,46 @@
+.noUi-connect {
+  background: $color-primary-alpha;
+  height: 100%;
+  width: 100%;
+  right: 0;
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+  display: none;
+}
+
+.noUi-connects {
+  border-radius: $border-r-xl;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.noUi-horizontal .noUi-handle {
+  position: relative;
+
+  top: -10px;
+  left: 98%;
+
+  width: 20px;
+  height: 20px;
+
+  border: 3px solid $color-primary-alpha;
+  background-color: $color-primary-beta;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(22, 11, 86, 0.2);
+
+  cursor: pointer;
+}
+
+.noUi-target {
+  background: none;
+
+  border: 0;
+}
+
+.noUi-target {
+  background: $color-tertiary-gamma;
+
+  border: 0;
+}
