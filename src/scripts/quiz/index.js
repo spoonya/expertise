@@ -3,7 +3,6 @@ import IMask from 'imask';
 import wNumb from 'wnumb';
 
 import { CLASSES } from '../constants';
-import validateFormQuiz from '../forms/quiz';
 
 class Quiz {
   constructor(selector) {
@@ -107,21 +106,15 @@ class Quiz {
   _fixSlideHeight(quizBranch) {
     const branchedSlide = this.quiz.querySelector(`#${quizBranch}`);
     const finalSlide = this.quiz.querySelector('[data-quiz-final]');
-    const insertBranchedAfterEL = this.quiz.querySelector(
+    const beforeBranchEl = this.quiz.querySelector(
       '[data-quiz-branched]'
     ).previousElementSibling;
 
-    insertBranchedAfterEL.parentNode.insertBefore(
-      branchedSlide,
-      insertBranchedAfterEL.nextSibling
-    );
+    beforeBranchEl.after(branchedSlide);
 
-    const insertFinalAfterEL = this.quiz.querySelector('[data-quiz-branched]');
+    const afterBranchEl = this.quiz.querySelector('[data-quiz-branched]');
 
-    insertFinalAfterEL.parentNode.insertBefore(
-      finalSlide,
-      insertFinalAfterEL.nextSibling
-    );
+    afterBranchEl.after(finalSlide);
   }
 
   _setActiveBranch(quizBranch) {
