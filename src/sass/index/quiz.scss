@@ -124,6 +124,7 @@
 
   @include media-tablet-lg {
     max-width: unset;
+    min-height: unset;
 
     padding: 30px;
   }
@@ -201,6 +202,10 @@
     &:not(:last-child) {
       margin-bottom: 17px;
     }
+  }
+
+  @include media-laptop {
+    max-width: 50rem;
   }
 
   @include media-tablet-lg {

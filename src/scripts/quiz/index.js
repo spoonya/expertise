@@ -3,7 +3,6 @@ import IMask from 'imask';
 import wNumb from 'wnumb';
 
 import { CLASSES } from '../constants';
-import isMediaBreakpoint from '../helpers/isMedia';
 
 class Quiz {
   constructor(selector) {
@@ -76,19 +75,8 @@ class Quiz {
       this._controlPrevButtonDisplay();
       this._updateCounter();
       this._updateProgresBar(this.swiperQuiz.realIndex + 1);
-      this._fixHeight();
       this._changeCounterText();
     });
-  }
-
-  _fixHeight() {
-    if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
-      if (isMediaBreakpoint(767.98)) {
-        this.quiz.querySelector('.swiper-container').style.minHeight = '60rem';
-      } else {
-        this.quiz.querySelector('.swiper-container').style.minHeight = '52rem';
-      }
-    }
   }
 
   _controlButtonsDisplay() {
@@ -115,14 +103,24 @@ class Quiz {
     this.quizElements.counterTotal.textContent = this.config.questionsCount;
   }
 
-  _moveBranchedSlide(quizBranch) {
-    const slideCopy = this.quiz.querySelector(`#${quizBranch}`);
-    const insertAfterEL = this.quiz.querySelector(
+  _fixSlideHeight(quizBranch) {
+    const branchedSlideCopy = this.quiz.querySelector(`#${quizBranch}`);
+    const finalSlideCopy = this.quiz.querySelector('[data-quiz-final]');
+    const insertBranchedAfterEL = this.quiz.querySelector(
       '[data-quiz-branched]'
     ).previousElementSibling;
 
     this.quiz.querySelector(`#${quizBranch}`).remove();
-    insertAfterEL.insertAdjacentHTML('afterend', slideCopy.outerHTML);
+    this.quiz.querySelector('[data-quiz-final]').remove();
+
+    insertBranchedAfterEL.insertAdjacentHTML(
+      'afterend',
+      branchedSlideCopy.outerHTML
+    );
+
+    const insertFinalAfterEL = this.quiz.querySelector('[data-quiz-branched]');
+
+    insertFinalAfterEL.insertAdjacentHTML('afterend', finalSlideCopy.outerHTML);
 
     this.quizElements.branchedQuestions = this.quiz.querySelectorAll(
       '[data-quiz-branched]'
@@ -137,6 +135,8 @@ class Quiz {
         slide.style.display = 'unset';
       }
     });
+
+    this._fixSlideHeight(quizBranch);
   }
 
   _controlBranches() {
@@ -155,7 +155,6 @@ class Quiz {
         const { quizBranch } = input.dataset;
 
         this._setActiveBranch(quizBranch);
-        this._moveBranchedSlide(quizBranch);
       });
     });
   }
