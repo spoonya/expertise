@@ -105,29 +105,23 @@ class Quiz {
   }
 
   _fixSlideHeight(quizBranch) {
-    const branchedSlideCopy = this.quiz.querySelector(`#${quizBranch}`);
-    const finalSlideCopy = this.quiz.querySelector('[data-quiz-final]');
+    const branchedSlide = this.quiz.querySelector(`#${quizBranch}`);
+    const finalSlide = this.quiz.querySelector('[data-quiz-final]');
     const insertBranchedAfterEL = this.quiz.querySelector(
       '[data-quiz-branched]'
     ).previousElementSibling;
 
-    this.quiz.querySelector(`#${quizBranch}`).remove();
-    this.quiz.querySelector('[data-quiz-final]').remove();
-
-    insertBranchedAfterEL.insertAdjacentHTML(
-      'afterend',
-      branchedSlideCopy.outerHTML
+    insertBranchedAfterEL.parentNode.insertBefore(
+      branchedSlide,
+      insertBranchedAfterEL.nextSibling
     );
 
     const insertFinalAfterEL = this.quiz.querySelector('[data-quiz-branched]');
 
-    insertFinalAfterEL.insertAdjacentHTML('afterend', finalSlideCopy.outerHTML);
-
-    this.quizElements.branchedQuestions = this.quiz.querySelectorAll(
-      '[data-quiz-branched]'
+    insertFinalAfterEL.parentNode.insertBefore(
+      finalSlide,
+      insertFinalAfterEL.nextSibling
     );
-
-    validateFormQuiz();
   }
 
   _setActiveBranch(quizBranch) {
@@ -283,9 +277,9 @@ class Quiz {
 
   _onInit() {
     this._setCounterInitValues();
-    this._initSliders();
     this._initProgressBar();
     this._controlBranches();
+    this._initSliders();
   }
 }
 
