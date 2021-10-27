@@ -3,6 +3,7 @@ import IMask from 'imask';
 import wNumb from 'wnumb';
 
 import { CLASSES } from '../constants';
+import validateFormQuiz from '../forms/quiz';
 
 class Quiz {
   constructor(selector) {
@@ -125,6 +126,8 @@ class Quiz {
     this.quizElements.branchedQuestions = this.quiz.querySelectorAll(
       '[data-quiz-branched]'
     );
+
+    validateFormQuiz();
   }
 
   _setActiveBranch(quizBranch) {
