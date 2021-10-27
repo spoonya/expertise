@@ -35,4 +35,16 @@
       border-color: $color-primary-omega;
     }
   }
+
+  @include media-tablet-lg {
+    padding: 150px 0;
+
+    &__txt {
+      font-size: 30px;
+    }
+  }
+
+  @include media-smartphone-lg {
+    padding: 70px 0;
+  }
 }
