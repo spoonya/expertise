@@ -70,7 +70,8 @@
       font-size: 1.4rem;
     }
 
-    button {
+    button,
+    a {
       font-size: 1.4rem;
       color: $color-primary-omega;
       white-space: nowrap;
@@ -90,7 +91,8 @@
         top: -15px;
       }
 
-      button {
+      button,
+      a {
         width: fit-content;
         margin-left: 0;
       }
