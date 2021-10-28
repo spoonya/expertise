@@ -49,7 +49,7 @@ class Quiz {
       slidesPerColumnFill: 'row',
       autoHeight: true,
 
-      spaceBetween: 20,
+      spaceBetween: 40,
 
       resizeObserver: true,
       observer: true,
