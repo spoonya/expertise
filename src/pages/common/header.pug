@@ -17,4 +17,7 @@ mixin header(modif=null)
             a.info__link(href="mailto:info@souzprofexpert.ru")
               +icon('info__icon', 'message')
               |info@souzprofexpert.ru
-          a.info__phone(href="tel:+74993468283") +7 (499) 346-82-83
+          .info__phone-mail
+            a.info__phone(href="tel:+74993468283") +7 (499) 346-82-83
+            a.info__mail(href="mailto:info@souzprofexpert.ru" aria-label="info@souzprofexpert.ru")
+              +icon('info__icon', 'message')

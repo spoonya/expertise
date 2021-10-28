@@ -6,12 +6,20 @@
   background-position: center;
   background-size: cover;
 
+  @include media-laptop {
+    padding-top: 180px;
+  }
+
   @include media-tablet-lg {
     margin-bottom: 40px;
   }
 
+  @include media-tablet-sm {
+    padding-top: 180px;
+  }
+
   @include media-smartphone-lg {
-    padding-top: 270px;
+    padding-top: 200px;
   }
 }
 

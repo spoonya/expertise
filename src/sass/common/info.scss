@@ -123,6 +123,22 @@
   }
 }
 
+.info__phone-mail {
+  display: flex;
+  align-items: center;
+}
+
+.info__mail {
+  display: none;
+  align-items: center;
+
+  margin-left: 20px;
+
+  @include media-smartphone-lg {
+    display: flex;
+  }
+}
+
 .info__phone {
   color: $color-primary-alpha;
   font-size: 2.2rem;

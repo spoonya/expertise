@@ -11,6 +11,12 @@
 
     border-bottom: 1px solid $color-primary-psi;
   }
+
+  .info__group-inner {
+    @include media-smartphone-lg {
+      display: none;
+    }
+  }
 }
 
 .header__rules {
