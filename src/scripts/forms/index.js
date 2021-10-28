@@ -3,11 +3,9 @@ import IMask from 'imask';
 import { CLASSES } from '../constants';
 
 class FormValidation {
-  constructor(selector, isCatalog = false) {
+  constructor(selector) {
     this.form = document.querySelector(selector);
     if (!this.form) return;
-
-    this.isCatalog = isCatalog;
 
     this.classes = {
       error: 'error',
@@ -216,20 +214,6 @@ class FormValidation {
     return isValid;
   }
 
-  _showAlert(isSuccess = true) {
-    const links = {
-      success: 'alert-success.html'
-    };
-
-    const url = this.isCatalog
-      ? `${window.location.protocol}//${document.domain}/${links.success}`
-      : null;
-
-    if (isSuccess) {
-      document.location.href = url;
-    }
-  }
-
   _clearInputs() {
     Object.values(this.formElements).forEach((input) => {
       if (!input) return;
@@ -275,8 +259,6 @@ class FormValidation {
 
       if (res.ok) {
         this._clearInputs();
-
-        this._showAlert();
       }
     } catch (error) {
       console.log(error);
@@ -352,11 +334,9 @@ class FormValidation {
         );
       }
 
-      if (isValid.includes(false)) {
-        return;
+      if (!isValid.includes(false)) {
+        this._send();
       }
-
-      this._send();
     });
   }
 }

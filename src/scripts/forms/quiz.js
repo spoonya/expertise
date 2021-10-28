@@ -1,7 +1,7 @@
 import FormValidation from './index';
 
 function validateFormQuiz() {
-  const formValidation = new FormValidation('#form-quiz', true);
+  const formValidation = new FormValidation('#form-quiz');
 
   formValidation.validateOnSubmit();
 }
