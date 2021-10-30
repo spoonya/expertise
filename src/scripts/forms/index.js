@@ -273,8 +273,6 @@ class FormValidation {
     const config = { ...this.defaultConfig, ...userConfig };
 
     this.form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
       const isValid = [];
 
       if (this.formElements.username) {
@@ -336,6 +334,8 @@ class FormValidation {
 
       if (!isValid.includes(false)) {
         this._send();
+      } else {
+        e.preventDefault();
       }
     });
   }
