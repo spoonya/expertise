@@ -59,7 +59,10 @@ class Quiz {
 
       on: {
         init: () => {
-          this._onInit();
+          this._setCounterInitValues();
+          this._initProgressBar();
+          this._controlBranches();
+          this._initSliders();
         }
       },
 
@@ -119,10 +122,20 @@ class Quiz {
 
   _setActiveBranch(quizBranch) {
     this.quizElements.branchedQuestions.forEach((slide) => {
+      const inputs = slide.querySelectorAll('input');
+
       if (slide.id !== quizBranch) {
         slide.style.display = 'none';
+
+        inputs.forEach((input) => {
+          input.setAttribute('data-quiz-branched-answer', false);
+        });
       } else {
         slide.style.display = 'unset';
+
+        inputs.forEach((input) => {
+          input.setAttribute('data-quiz-branched-answer', true);
+        });
       }
     });
 
@@ -264,13 +277,6 @@ class Quiz {
     if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
       this.quizElements.counter.textContent = 'Почти готово';
     }
-  }
-
-  _onInit() {
-    this._setCounterInitValues();
-    this._initProgressBar();
-    this._controlBranches();
-    this._initSliders();
   }
 }
 
