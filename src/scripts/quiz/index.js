@@ -79,6 +79,7 @@ class Quiz {
       this._updateCounter();
       this._updateProgresBar(this.swiperQuiz.realIndex + 1);
       this._changeCounterText();
+      this._removeInactiveBranchedSlides();
     });
   }
 
@@ -122,24 +123,36 @@ class Quiz {
 
   _setActiveBranch(quizBranch) {
     this.quizElements.branchedQuestions.forEach((slide) => {
-      const inputs = slide.querySelectorAll('input');
-
       if (slide.id !== quizBranch) {
         slide.style.display = 'none';
-
-        inputs.forEach((input) => {
-          input.setAttribute('data-quiz-branched-answer', false);
-        });
       } else {
         slide.style.display = 'unset';
-
-        inputs.forEach((input) => {
-          input.setAttribute('data-quiz-branched-answer', true);
-        });
       }
     });
 
     this._fixSlideHeight(quizBranch);
+  }
+
+  _removeInactiveBranchedSlides() {
+    const setIndexesToDelete = () => {
+      const arr = [];
+
+      for (
+        let i = this.config.questionsCount + 1;
+        i < this.swiperQuiz.slides.length;
+        i++
+      ) {
+        arr.push(i);
+      }
+
+      return arr;
+    };
+
+    if (this.swiperQuiz.realIndex + 1 > this.config.questionsCount) {
+      this.swiperQuiz.removeSlide(setIndexesToDelete());
+
+      this.swiperQuiz.update();
+    }
   }
 
   _controlBranches() {
